@@ -19,11 +19,12 @@ const Assesment = () => {
   } 
   return (
     <AssessCont>
-      <HeadLine>Try giving responses to these questions</HeadLine>
+      <HeadLine>Over the last 2 weeks, how often have you been
+      bothered by any of the following problems?</HeadLine>
       <QuestCont>
         <form id='form'>
         <div>
-          <Questions>Do you feel Alone everytime</Questions>
+          <Questions>Little interest or pleasure in doing things</Questions>
           <ValueCont>
             {[1,2, 3, 4, 5].map(num => (
              <Circle key={num} clicked={clickedCircles[num]} onClick={handleClick(num)}>
@@ -31,10 +32,11 @@ const Assesment = () => {
              </Circle>
             ))}
           </ValueCont>
+          <p>1 being Not at all, 5 being Nearly every day</p>
 
         </div>
         <div>
-        <Questions>Do you feel Alone everytime</Questions>
+        <Questions>Feeling down, depressed, or hopeless</Questions>
         <ValueCont>
         {[1,2, 3, 4, 5].map(num => (
              <Circle key={num} clicked={clickedCircles[num]} onClick={handleClick(num)}>
@@ -44,7 +46,7 @@ const Assesment = () => {
           </ValueCont>
         </div>
         <div>
-        <Questions>Do you feel Alone everytime</Questions>
+        <Questions>Trouble falling or staying asleep, or sleeping too much</Questions>
         <ValueCont>
         {[1,2, 3, 4, 5].map(num => (
              <Circle key={num} clicked={clickedCircles[num]} onClick={handleClick(num)}>
@@ -54,7 +56,7 @@ const Assesment = () => {
           </ValueCont>
         </div>
         <div>
-        <Questions>Do you feel Alone everytime</Questions>
+        <Questions>Feeling tired or having little energy</Questions>
         <ValueCont>
         {[1,2, 3, 4, 5].map(num => (
              <Circle key={num} clicked={clickedCircles[num]} onClick={handleClick(num)}>
@@ -64,7 +66,7 @@ const Assesment = () => {
           </ValueCont>
         </div>
         <div>
-        <Questions>Do you feel Alone everytime</Questions>
+        <Questions>Poor appetite or overeating</Questions>
         <ValueCont>
         {[1,2, 3, 4, 5].map(num => (
              <Circle key={num} clicked={clickedCircles[num]} onClick={handleClick(num)}>
@@ -85,7 +87,7 @@ export default Assesment;
 const AssessCont = styled.div`
   border: 1px solid black;
   border-radius: 5px;
-  padding-left: 5%;
+  padding-left: 2%;
   margin-top: 5px;
   margin-left: 20%;
   padding-bottom: 2px;

@@ -35,7 +35,7 @@ function ChatBot() {
   return (
     <>
     <div className="chat-bot-container">
-      <h1 className='bg-red-300' onClick={navigateChatBot}>Chatbot</h1>
+      <h1 className='bg-red-300' onClick={navigateChatBot}>ChatBot</h1>
       <textarea
           className='border-rounded w-full'
             value={question}
