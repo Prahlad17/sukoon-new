@@ -10,6 +10,7 @@ import AssessmentResult from './components/assessmentResult';
 import Profile from './components/profile';
 import { AuthProvider } from './components/authContext';
 import { UserContext } from './components/userContext';
+import { ScoreProvider } from './components/scoreContext';
 
 const App = () => {
   const user = useContext(UserContext);
@@ -18,11 +19,13 @@ const App = () => {
   const handleUserIdUpdate = (newUserId) => {
     setUserId(newUserId);
   };
+ 
 
 
   return (
     <AuthProvider onUserIdUpdate={handleUserIdUpdate}>
     <UserContext.Provider value={user ||{}}>
+    <ScoreProvider>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -34,6 +37,7 @@ const App = () => {
           <Route path='/assessmentResult' element={<AssessmentResult/>}/>
         </Routes>
       </BrowserRouter>
+      </ScoreProvider>
       </UserContext.Provider>
       </AuthProvider>
   );

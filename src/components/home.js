@@ -10,6 +10,7 @@ import {UserContext} from './userContext';
 import './home.css';
 import chatbotImg from '../assets/chatbot-img.png'
 import BlogSection from './blogSection';
+import Footer from './footer';
 
 
 const Home = () => {
@@ -32,6 +33,9 @@ const Home = () => {
         </Container>
         
         <img src={chatbotImg} data-toggle='tooltip' data-placement='top' title='Express your Feelings' alt={chatbotImg} onClick={onImgClick}/>
+        {/* <Foot>
+        <Footer/>
+        </Foot> */}
        
     </>
   )
@@ -43,6 +47,16 @@ const Container = styled.div`
   display: flex;
   height: calc(100vh - 80px);
 `;
+
+const Foot = styled.div`
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 1275px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  
+`
 
 
 

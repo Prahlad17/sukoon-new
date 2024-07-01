@@ -1,0 +1,27 @@
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap:2rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:#444;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color:#777;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding: .5rem;
+    color:#16a085;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}

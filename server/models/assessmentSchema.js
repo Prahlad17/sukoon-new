@@ -8,8 +8,7 @@ const assessmentSchema = new mongoose.Schema({
         unique: true
     },
     user:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'RegisterModel',
+        type: String,
         required: true
         
     },
@@ -27,5 +26,5 @@ const assessmentSchema = new mongoose.Schema({
         default: Date.now
     }
 });
-const AssessmentModel = mongoose.model("Assessment",assessmentSchema)
+const AssessmentModel = mongoose.model("assessment",assessmentSchema)
 module.exports = AssessmentModel

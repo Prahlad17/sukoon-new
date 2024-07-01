@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import {UserContext} from './userContext';
 import axios from 'axios';
-export const ScoreContext = createContext();
+import { ScoreContext } from './scoreContext';
+
 
 
 const Assesment = () => {
+  const { setScore, setSuggestion } = useContext(ScoreContext);
   const userId = useContext(UserContext);
   const [clickedCircles, setClickedCircles] = useState({});
   // const [clicked,setClicked] = useState(false);
@@ -63,10 +65,7 @@ const Assesment = () => {
     suggestion = "Consider seeking professional help or talking to someone you trust.";
   }
   return {normalizedScore,suggestion};
-  console.log(normalizedScore);
-  console.log(maxScore);
-  console.log(status);
-  console.log(suggestion);
+  
   }
 
   const handleClick = (question, value) => (e) => {
@@ -137,6 +136,8 @@ const Assesment = () => {
     e.preventDefault();
     const {normalizedScore,suggestion }= CalculateFinalScore(responses,weights);
     console.log(normalizedScore + " " +suggestion);
+    setScore(normalizedScore);
+    setSuggestion(suggestion);
     submitAssessment(normalizedScore,suggestion);
     // navigate('/assessmentResult',{normalizedScore,suggestion});
     //

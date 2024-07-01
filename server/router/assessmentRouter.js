@@ -22,9 +22,11 @@ assessmentRouter.post('/create', async (req, res) => {
             id: userId,
             user: userName,
             normalizedScore,
-            textSuggestion
+            textSuggestion,
+            date: Date.now()
         });
         await assessment.save();
+        console.log("submitted");
         res.json({ message: 'Assessment created successfully' });
     } catch (error) {
         console.error("Error during assessment creation:", error);
@@ -35,11 +37,12 @@ assessmentRouter.post('/create', async (req, res) => {
 assessmentRouter.get('/user/:userId', async (req, res) => {
     try {
         const userId = req.params.userId;
+        console.log(userId);
 
-        if (!mongoose.Types.ObjectId.isValid(userId)) {
-            console.log('Invalid userId in get request', userId);
-            return res.status(400).json({ message: 'Invalid userId' });
-        }
+        // if (!mongoose.Types.ObjectId.isValid(userId)) {
+        //     console.log('Invalid userId in get request', userId);
+        //     return res.status(400).json({ message: 'Invalid userId' });
+        // }
 
         const assessments = await AssessmentModel.find({ user: mongoose.Types.ObjectId(userId) }).sort({ date: -1 });
         res.json(assessments);

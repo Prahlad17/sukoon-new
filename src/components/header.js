@@ -75,7 +75,7 @@ const Button = styled.button`
 `;
 
 const Propic = styled.div`
-    background-image: url('../assests/Profilepic.png');
+    background-image: url('../assets/Profilepic.png');
     padding: 5px 10px;
     margin: 5px;
     margin-top: 7px;
